@@ -26,4 +26,9 @@ public class SceneMove : MonoBehaviour
         int index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index + 1);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

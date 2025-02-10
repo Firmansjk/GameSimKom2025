@@ -29,10 +29,11 @@ public class GameManager : MonoBehaviour
             finishPortal.SetActive(true);
         }
 
-        if (health == 0)
+        if (health <= 0)
         {
             losePanel.SetActive(true);
             playerMovement.enabled = false;
+
         }
 
     }
@@ -47,7 +48,12 @@ public class GameManager : MonoBehaviour
     public void HealthDecrease(int decrease)
     {
         health = health - decrease;
+        if (health <= 0)
+        {
+            health = 0;
+        }
         gameplayUI.DisplayHealth();
+
     }
 
     public void Finish()
